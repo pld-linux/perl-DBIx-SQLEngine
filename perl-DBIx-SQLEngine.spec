@@ -3,8 +3,8 @@
 %bcond_with	tests	# perform "make test" (requires working DBI connection)
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	DBIx
-%define	pnam	SQLEngine
+%define		pdir	DBIx
+%define		pnam	SQLEngine
 Summary:	DBIx::SQLEngine - extends DBI with high-level operations
 Summary(pl):	DBIx::SQLEngine - rozszerzenie DBI o wysokopoziomowe operacje
 Name:		perl-DBIx-SQLEngine

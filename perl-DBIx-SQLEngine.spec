@@ -8,13 +8,12 @@
 Summary:	DBIx::SQLEngine - Extends DBI with high-level operations
 Summary(pl):	DBIx::SQLEngine - rozszerzenie DBI o wysokopoziomowe operacje
 Name:		perl-DBIx-SQLEngine
-Version:	0.010
-%define		_ver 0.01
+Version:	0.021
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	acc00692ef771ac9ab1ea7c823cd8ac5
+# Source0-md5:	f27d916895b190906d943deaa014d2c5
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -37,7 +36,7 @@ bazodanowego DBI, dodaj±c metody obs³uguj±ce generowanie SQL w locie
 i wykonywanie zapytañ w pojedynczym wywo³aniu.
 
 %prep
-%setup -q -n %{pdir}-%{pnam}-%{_ver}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 %{__perl} Makefile.PL \
@@ -59,5 +58,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorlib}/DBIx/SQLEngine
 %{perl_vendorlib}/DBIx/SQLEngine/*.pm
 %{perl_vendorlib}/DBIx/SQLEngine/Criteria
-%{perl_vendorlib}/DBIx/SQLEngine/Mixin
+%{perl_vendorlib}/DBIx/SQLEngine/Driver
+%{perl_vendorlib}/DBIx/SQLEngine/DriverTrait
+%{perl_vendorlib}/DBIx/SQLEngine/Record
+%{perl_vendorlib}/DBIx/SQLEngine/Schema
+%{perl_vendorlib}/DBIx/SQLEngine/Utility
 %{_mandir}/man3/*

@@ -8,12 +8,13 @@
 Summary:	DBIx::SQLEngine - Extends DBI with high-level operations
 Summary(pl):	DBIx::SQLEngine - rozszerzenie DBI o wysokopoziomowe operacje
 Name:		perl-DBIx-SQLEngine
-Version:	0.009
-Release:	2
+Version:	0.010
+%define		_ver 0.01
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	025548190d8b4f84785e9b6414747086
+# Source0-md5:	acc00692ef771ac9ab1ea7c823cd8ac5
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{?_with_tests:1}%{!?_with_tests:0}
@@ -36,7 +37,7 @@ bazodanowego DBI, dodaj±c metody obs³uguj±ce generowanie SQL w locie
 i wykonywanie zapytañ w pojedynczym wywo³aniu.
 
 %prep
-%setup -q -n %{pdir}-%{pnam}-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{_ver}
 
 %build
 %{__perl} Makefile.PL \

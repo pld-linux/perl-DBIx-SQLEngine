@@ -2,10 +2,10 @@
 %define	pdir	DBIx
 %define	pnam	SQLEngine
 Summary:	DBIx::SQLEngine - Extends DBI with high-level operations
-#Summary(pl):	
+Summary(pl):	DBIx::SQLEngine - rozszerzenie DBI o wysokopoziomowe operacje
 Name:		perl-DBIx-SQLEngine
 Version:	0.007
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -19,8 +19,10 @@ The DBIx::SQLEngine class provides an extended interface for the DBI
 database interface, adding methods that support ad-hoc SQL generation
 and query execution in a single call.
 
-# %description -l pl
-# TODO
+%description -l pl
+Klasa DBIx::SQLEngine udostêpnia rozszerzony interfejs dla interfejsu
+bazodanowego DBI, dodaj±c metody obs³uguj±ce generowanie SQL w locie
+i wykonywanie zapytañ w pojedynczym wywo³aniu.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}

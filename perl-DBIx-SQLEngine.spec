@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	DBIx
 %define		pnam	SQLEngine
-Summary:	DBIx::SQLEngine - Extends DBI with high-level operations
+Summary:	DBIx::SQLEngine - extends DBI with high-level operations
 Summary(pl):	DBIx::SQLEngine - rozszerzenie DBI o wysokopoziomowe operacje
 Name:		perl-DBIx-SQLEngine
 Version:	0.024

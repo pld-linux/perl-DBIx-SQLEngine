@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+# _with_tests - perform "make test" (requires working DBI connection)
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	DBIx
@@ -15,7 +15,7 @@ Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
 BuildRequires:	rpm-perlprov >= 3.0.3-26
-%if %{!?_without_tests:1}%{?_without_tests:0}
+%if %{?_with_tests:1}%{!?_with_tests:0}
 BuildRequires:	perl-DBI >= 1.0
 BuildRequires:	perl-DBIx-AnyDBD >= 2.0
 BuildRequires:	perl-Class-MakeMethods >= 1.003
@@ -40,7 +40,7 @@ i wykonywanie zapytañ w pojedynczym wywo³aniu.
 %build
 perl Makefile.PL
 %{__make}
-%{!?_without_tests:%{__make} test}
+%{?_with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT

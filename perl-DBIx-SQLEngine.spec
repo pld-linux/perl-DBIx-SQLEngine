@@ -1,11 +1,15 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	DBIx
-%define	pnam	SQLEngine
+%define		pdir	DBIx
+%define		pnam	SQLEngine
 Summary:	DBIx::SQLEngine - Extends DBI with high-level operations
 Summary(pl):	DBIx::SQLEngine - rozszerzenie DBI o wysokopoziomowe operacje
 Name:		perl-DBIx-SQLEngine
 Version:	0.007
-Release:	2
+Release:	3
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -30,6 +34,7 @@ i wykonywanie zapytañ w pojedynczym wywo³aniu.
 %build
 perl Makefile.PL
 %{__make}
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -41,6 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{perl_sitelib}/%{pdir}/*.pm
-%{perl_sitelib}/%{pdir}/%{pnam}
+%{perl_sitelib}/DBIx/*.pm
+%dir %{perl_sitelib}/DBIx/SQLEngine
+%{perl_sitelib}/DBIx/SQLEngine/*.pm
+%{perl_sitelib}/DBIx/SQLEngine/Criteria
+%{perl_sitelib}/DBIx/SQLEngine/Mixin
 %{_mandir}/man3/*

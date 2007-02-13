@@ -6,7 +6,7 @@
 %define		pdir	DBIx
 %define		pnam	SQLEngine
 Summary:	DBIx::SQLEngine - extends DBI with high-level operations
-Summary(pl.UTF-8):   DBIx::SQLEngine - rozszerzenie DBI o wysokopoziomowe operacje
+Summary(pl.UTF-8):	DBIx::SQLEngine - rozszerzenie DBI o wysokopoziomowe operacje
 Name:		perl-DBIx-SQLEngine
 Version:	0.93
 Release:	2

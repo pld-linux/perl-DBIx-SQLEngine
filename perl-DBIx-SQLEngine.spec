@@ -9,7 +9,7 @@ Summary:	DBIx::SQLEngine - extends DBI with high-level operations
 Summary(pl.UTF-8):	DBIx::SQLEngine - rozszerzenie DBI o wysokopoziomowe operacje
 Name:		perl-DBIx-SQLEngine
 Version:	0.93
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl

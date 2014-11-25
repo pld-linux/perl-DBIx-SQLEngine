@@ -1,10 +1,10 @@
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires working DBI connection)
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	DBIx
 %define		pnam	SQLEngine
+%include	/usr/lib/rpm/macros.perl
 Summary:	DBIx::SQLEngine - extends DBI with high-level operations
 Summary(pl.UTF-8):	DBIx::SQLEngine - rozszerzenie DBI o wysokopoziomowe operacje
 Name:		perl-DBIx-SQLEngine
@@ -15,13 +15,14 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	963f4e41b77f7a1f6287eeac760a94e1
+URL:		http://search.cpan.org/dist/DBIx-SQLEngine/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-DBI >= 1.0
-BuildRequires:	perl-DBIx-AnyDBD >= 2.0
 BuildRequires:	perl-Class-MakeMethods >= 1.003
 BuildRequires:	perl-Class-MakeMethods-Template >= 1.003
+BuildRequires:	perl-DBI >= 1.0
+BuildRequires:	perl-DBIx-AnyDBD >= 2.0
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -33,8 +34,8 @@ and query execution in a single call.
 
 %description -l pl.UTF-8
 Klasa DBIx::SQLEngine udostępnia rozszerzony interfejs dla interfejsu
-bazodanowego DBI, dodając metody obsługujące generowanie SQL w locie
-i wykonywanie zapytań w pojedynczym wywołaniu.
+bazodanowego DBI, dodając metody obsługujące generowanie SQL w locie i
+wykonywanie zapytań w pojedynczym wywołaniu.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
